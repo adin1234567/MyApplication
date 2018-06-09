@@ -1,5 +1,6 @@
 package com.example.v5636.myapplication;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import org.apache.commons.net.ftp.FTP;
@@ -8,10 +9,11 @@ import org.apache.commons.net.ftp.FTPReply;
 
 import java.net.SocketException;
 
-public class ftpconnect {
-    public FTPClient mFTPClient;
+public class ftpconnect  {
+    public FTPClient mFTPClient=null;
 
     public boolean ftpConnect(String host, String username, String password, int port) {
+
         Log.d("ftpconnect", "" + "Running ftp connect");
         mFTPClient = new FTPClient();
         try {
@@ -41,6 +43,8 @@ public class ftpconnect {
 
 
 //                mFTPClient.setFileType(FTP.BINARY_FILE_TYPE);
+
+
 //                mFTPClient.enterLocalPassiveMode();
 
                 return status;
