@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgetPassWordActivity extends AppCompatActivity {
     EditText mEmail;
     Button mSubmit;
+
     FirebaseAuth firebaseAuth;
 
 
@@ -26,6 +27,7 @@ public class ForgetPassWordActivity extends AppCompatActivity {
         mEmail=findViewById(R.id.forgetEmail);
         mSubmit=findViewById(R.id.Submit);
         firebaseAuth = FirebaseAuth.getInstance();
+
 
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
