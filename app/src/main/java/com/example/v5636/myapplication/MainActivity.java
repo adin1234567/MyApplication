@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             boolean result = true;
-            result = Iotftp.ftpConnect("192.72.189.223", "admin", "Admin", 21);
+     //       result = Iotftp.ftpConnect("192.72.189.223", "admin", "Admin", 21);
         //    Toast.makeText(getApplicationContext(), "" + result, Toast.LENGTH_LONG).show();
 
             return ""+result;
