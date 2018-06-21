@@ -3,10 +3,9 @@
     package="com.example.v5636.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_INERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_INERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -25,7 +24,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".ForgetPassWordActivity"></activity>
+        <activity android:name=".ForgetPassWordActivity" />
+        <activity android:name=".InstantActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".TodayActivity"></activity>
     </application>
 
 </manifest>

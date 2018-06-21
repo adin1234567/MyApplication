@@ -84,12 +84,12 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         auth = FirebaseAuth.getInstance();
 
-        mGoogle_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//firebaseAuthWithGoogle();
-            }
-        });
+//        mGoogle_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//firebaseAuthWithGoogle(gso);
+//            }
+//        });
         // [END config_signin]
 
 
