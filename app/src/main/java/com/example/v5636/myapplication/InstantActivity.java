@@ -3,7 +3,12 @@ package com.example.v5636.myapplication;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +34,8 @@ public class InstantActivity extends AppCompatActivity {
     private DatabaseReference myRef;
     private String voltage, ampere, power, back_temp;
     TextView txtVoltage, txtTime, txtPower, txtAmpere, txtTemp;
+    Toolbar mToolbar;
+    Spinner mSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +47,35 @@ public class InstantActivity extends AppCompatActivity {
         Log.d(TAG, "Filename=" + nowFilename + "\nTimedivide:" + nowTimeDivide);
 
 
-        txtVoltage=findViewById(R.id.insVoltage);
-        txtAmpere=findViewById(R.id.insAmpere);
-        txtPower=findViewById(R.id.insPower);
-        txtTime=findViewById(R.id.insTime);
-        txtTemp=findViewById(R.id.insTemp);
+        mToolbar = findViewById(R.id.toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.app_name));
+        mSpinner = findViewById(R.id.Barspinner);
 
+
+        txtVoltage = findViewById(R.id.insVoltage);
+        txtAmpere = findViewById(R.id.insAmpere);
+        txtPower = findViewById(R.id.insPower);
+        txtTime = findViewById(R.id.insTime);
+        txtTemp = findViewById(R.id.insTemp);
+
+        //[Toolbar]
+        ArrayAdapter<String> toolBarAdapter =
+                new ArrayAdapter<String>(InstantActivity.this, R.layout.toolbar_spinner,
+                        getResources().getStringArray(R.array.ActivityNames));
+        toolBarAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(toolBarAdapter);
+
+        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(InstantActivity.this, mSpinner.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
         //[Firebase]
@@ -66,8 +96,6 @@ public class InstantActivity extends AppCompatActivity {
             }
 
 
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -83,8 +111,6 @@ public class InstantActivity extends AppCompatActivity {
                     Log.d(TAG, "null");
                 }
             }
-
-
 
 
             @Override
@@ -104,8 +130,6 @@ public class InstantActivity extends AppCompatActivity {
             }
 
 
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -123,8 +147,6 @@ public class InstantActivity extends AppCompatActivity {
             }
 
 
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -140,8 +162,6 @@ public class InstantActivity extends AppCompatActivity {
                     Log.d(TAG, "null");
                 }
             }
-
-
 
 
             @Override

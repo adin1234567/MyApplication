@@ -76,21 +76,22 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // [START config_signin]
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        auth = FirebaseAuth.getInstance();
+//        // Configure Google Sign In
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken("173253756473-5rb2el9ofm4ghhte8lrbca524r3oqtql.apps.googleusercontent.com")
+//                .requestEmail()
+//                .build();
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+//        auth = FirebaseAuth.getInstance();
+//
+////        mGoogle_button.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+////                startActivityForResult(signInIntent, RC_SIGN_IN);
+////            }
+////        });
 
-//        mGoogle_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//firebaseAuthWithGoogle(gso);
-//            }
-//        });
-        // [END config_signin]
 
 
 
@@ -147,9 +148,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-            //------------------------------
 
-            //finish();
 
     @Override
     protected void onStart() {
@@ -166,9 +165,7 @@ public class LoginActivity extends AppCompatActivity {
     // [START auth_with_google]
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-        // [START_EXCLUDE silent]
-     //   showProgressDialog();
-        // [END_EXCLUDE]
+
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         auth.signInWithCredential(credential)
@@ -187,11 +184,9 @@ public class LoginActivity extends AppCompatActivity {
                            // updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
-                    //    hideProgressDialog();
-                        // [END_EXCLUDE]
+
                     }
                 });
     }
-    // [END auth_with_google]
+
 }

@@ -222,4 +222,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="338dp" />
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Spinner
+            android:id="@+id/Barspinner"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+
+            android:layout_gravity="right"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:layout_alignLeft="@+id/toolbar"
+            android:layout_alignStart="@+id/toolbar" />
+
+    </android.support.v7.widget.Toolbar>
+
+
 </android.support.constraint.ConstraintLayout>

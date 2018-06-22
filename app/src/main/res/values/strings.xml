@@ -4,4 +4,14 @@
     <string name="title_activity_instant">InstantActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <string-array name="ActivityNames">
+
+        <item>即時數據</item>
+        <item>今日數據</item>
+        <item>歷史數據</item>
+
+
+    </string-array>
 </resources>
